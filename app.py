@@ -3,6 +3,7 @@ import pandas as pd
 from textblob import TextBlob
 import re
 from googletrans import Translator
+from streamlit_lottie import st_lottie
 
 # Configuración de la página
 st.set_page_config(
@@ -52,6 +53,12 @@ def procesar_texto(texto):
         "texto_original": texto_original,
         "texto_traducido": texto_ingles
     }
+
+import json
+with open ("gato.json") as source:
+  animation=json.load(source)
+st.lottie(animation,width = 350)
+
 
 # Función para mostrar resultados
 def mostrar_resultados(resultados):
